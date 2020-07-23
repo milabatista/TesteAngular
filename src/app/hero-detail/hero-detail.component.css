@@ -1,0 +1,19 @@
+.details-cart{
+    width: 200px; 
+    height: 150px;
+    text-align: center;
+    font-family: 'Times New Roman';
+    font-size: 20px;
+    padding-inline: 10px;
+    background-color: #98E0E8; 
+}
+.details-cart:hover{
+    background-color: #55BED7;
+    transition-duration: 0.4s;
+    box-shadow: 0 12px 14px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#titulo{
+    font-family: 'Times New Roman';
+    font-style: oblique;
+}

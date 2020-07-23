@@ -1,0 +1,13 @@
+<div *ngIf="hero">
+   <h2 id = "titulo">{{hero.name}} Details</h2>
+    <div class ="details-cart">
+      <label><span>id: </span>{{hero.id}}</label> <br />
+      <label><span> name: </span>{{hero.name}}</label>
+ <!-- <input [(ngModel)]="hero.name" placeholder="nome"/>       
+[(ngModel)] é a sintaxe de ligação de dados bidirecional do Angular.
+Aqui, ele vincula a hero.name propriedade à caixa de texto HTML (placeholder), para que os dados 
+possam fluir nas duas direções: da hero.name propriedade 
+para a caixa de texto e da caixa de texto de volta para a hero.name. 
+       </label>-->
+    </div>
+</div>

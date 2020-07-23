@@ -1,0 +1,50 @@
+<header>
+  <title>Heroes List</title>
+</header>
+<!--Para clicar em um herói da lista e aparecer detalher sobre ele:-->
+<body>
+  <!--para mostrar uma lista de heróis-->
+  <!--Esta *ngFor é a diretiva de repetidor da Angular . 
+     Ele repete o elemento host para cada elemento em uma lista.
+     * <li> é o elemento host.
+     * heroes mantém a lista de mock-heroes da HeroesComponent classe, a lista de mock-heroes.
+     * hero mantém o objeto hero atual para cada iteração na lista.-->
+  <h3>Exibindo Lista de heróis: </h3>
+  <!--Os parênteses ao redor click dizem ao Angular para ouvir o evento <li> do elemento click. 
+     Quando o usuário clica no <li>, Angular executa a expressão onSelect(hero).
+     O método onSelect() deve ser declarado em HeroesComponent, como tudo. Lembre que este html é
+     apenas um model!!-->
+  <ul class = "heroes">
+     <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)" >
+     <span> {{hero.id }}   {{hero.name}}</span>
+     </li>
+  </ul>
+ 
+ <!--  <div *ngIf="selectedHero">
+    <h2>{{selectedHero.name}} Details</h2>
+     <div>
+        <span>id: </span>{{selectedHero.id}}
+     </div>
+     <div>
+        <label>name:
+        <input [(ngModel)]="selectedHero.name" placeholder=""/>       
+[(ngModel)] é a sintaxe de ligação de dados bidirecional do Angular.
+ Aqui, ele vincula a selectedHero.name propriedade à caixa de texto HTML (placeholder), para que os dados 
+ possam fluir nas duas direções: da ero.name propriedade 
+ para a caixa de texto e da caixa de texto de volta para a selectedHero.name. 
+        </label>
+     </div>
+ </div>-->
+
+<!--encaminha o resto da página para: ../hero-detail/hero-detail.componet.html
+[hero]="selectedHero" é uma ligação de propriedade Angular. 
+É uma ligação de dados unidirecional da selectedHero propriedade de HeroesComponent para a
+hero propriedade do elemento de destino, que é mapeada para a hero propriedade de HeroDetailComponent.
+
+Agora, quando o usuário clica em um herói na lista, as selectedHero são alteradas. Quando as 
+selectedHero são alteradas, a associação da propriedade  atualiza e hero e HeroDetailComponentexibe evibe um novo herói.-->
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+ 
+</body>
+

@@ -1,0 +1,48 @@
+h2{
+    text-decoration-color: black;
+    background-color:#CC99CC;
+    font-family: 'Times New Roman';
+    font-size: 30px;
+    text-align: center;
+
+}
+
+h3{
+    text-emphasis-color: black;
+    font-family: 'Times New Roman';
+}
+/*
+#heroeslist{
+    background-color: cornflowerblue;
+}*/
+
+.heroes {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 15em;
+  }
+  .heroes li {
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color:#FF8899;
+    margin: .5em;
+    padding: .3em 0;
+    height: 1.6em;
+    border-radius: 4px;
+    text-align: center;
+  }
+.heroes li:hover {
+    color: #fdfdfd;
+    background-color:#CC6688 ;
+    left: .1em;
+  }
+  .heroes li.selected {
+    background-color:#ff9999;
+    color:#fdfdfd;
+  }
+  .heroes li.selected:hover {
+    background-color:#CC6688 ;
+    color:#fdfdfd;
+  }
