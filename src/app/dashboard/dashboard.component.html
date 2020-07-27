@@ -1,8 +1,13 @@
+<!--O modelo apresenta uma grade de links de nomes de heróis.
+
+O repetidor cria quantos links houver na matriz do componente .*ngForheroes
+Os links são estilizados como blocos coloridos pelo dashboard.component.css.-->
 <h3>Olá!!</h3>
-<div>
-    <a *ngFor="let hero of heroes">
-        <div>
+<div class = "grid grid-pad">
+    <a *ngFor="let hero of heroes" routerLink = "/details/{{hero.id}}" class = "col 1-4">
+        <div class = "module hero">
             <h6>{{hero.name}}</h6>
         </div>
     </a>
 </div>
+<app-hero-search></app-hero-search>

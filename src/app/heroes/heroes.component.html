@@ -1,8 +1,20 @@
 <header>
   <title>Heroes List</title>
+ 
+
 </header>
 <!--Para clicar em um herói da lista e aparecer detalher sobre ele:-->
 <body>
+  <div>
+   <label>Hero name:
+     <input #heroName />
+   </label>
+   <!-- (click) passa o valor de entrada para adicionar () e depois limpa a entrada -->
+   <button (click)="add(heroName.value); heroName.value=''">
+     add
+   </button>
+ </div>
+
   <!--para mostrar uma lista de heróis-->
   <!--Esta *ngFor é a diretiva de repetidor da Angular . 
      Ele repete o elemento host para cada elemento em uma lista.
@@ -15,8 +27,11 @@
      O método onSelect() deve ser declarado em HeroesComponent, como tudo. Lembre que este html é
      apenas um model!!-->
   <ul class = "heroes">
-     <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)" >
-     <span> {{hero.id }}   {{hero.name}}</span>
+     <li *ngFor="let hero of heroes"  >
+      <a routerLink="/details/{{hero.id}}">
+         <span> {{hero.id }}   {{hero.name}}</span>
+      </a>
+      <button class="delete" title="delete hero" (click)="delete(hero)">x</button>
      </li>
   </ul>
  
@@ -44,7 +59,9 @@ hero propriedade do elemento de destino, que é mapeada para a hero propriedade 
 Agora, quando o usuário clica em um herói na lista, as selectedHero são alteradas. Quando as 
 selectedHero são alteradas, a associação da propriedade  atualiza e hero e HeroDetailComponentexibe evibe um novo herói.-->
 
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+<!--<app-hero-detail [hero]="selectedHero"></app-hero-detail>-->
  
+<!--Adicione um novo herói-->
+
 </body>
 
